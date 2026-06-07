@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Patient Appointment Manager
 
-## Getting Started
+A web-based admin panel for managing clinic patients and appointments. Built as a portfolio project while applying for an Ausbildung in software development.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## About this project
+
+I come from a nursing background and am transitioning into IT. I built this project to demonstrate that I can work with a real tech stack — including authentication, a database, and a multi-page application — not just basic HTML and CSS.
+
+The idea came from something I actually know: patient scheduling is a daily task in any clinic, and the tools used for it are often clunky. This is my own take on what a simple, clean admin interface could look like.
+
+> All patient and appointment data in this project is completely fictional demo data. This is not a real medical system and does not handle real patient information.
+
+---
+
+## Features
+
+- Email and password login with Firebase Authentication
+- Protected admin area — login required to access any page
+- **Patients** — add, view, edit, and delete patient records
+- **Appointments** — create, edit, and delete appointments linked to patients
+- **Search and filters** — filter appointments by name, reason, status, and date range
+- **Dashboard** — live overview with stat cards, today's appointments, and upcoming appointments
+- Persistent login session across page reloads
+
+---
+
+## Tech stack
+
+| Area | Technology |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript |
+| UI | React 19, CSS Modules |
+| Auth | Firebase Authentication |
+| Database | Cloud Firestore |
+| Hosting (optional) | Vercel |
+
+No UI libraries, no chart libraries. Everything is built with plain CSS Modules and standard React.
+
+---
+
+## Firebase setup
+
+1. Go to [https://console.firebase.google.com](https://console.firebase.google.com) and create a new project
+2. In **Authentication**, enable the **Email/Password** sign-in method
+3. In **Firestore Database**, create a database in production mode
+4. Add the following Firestore security rules (in the Rules tab):
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Go to **Project settings → Your apps**, register a Web app, and copy the config values into your `.env.local` file (see below)
+6. Create a user manually in **Authentication → Users** with the demo credentials or your own
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Copy `.env.example` to `.env.local` and fill in your Firebase project values:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp .env.example .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=your-api-key-here
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-project-id.firebasestorage.app
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`.env.local` is listed in `.gitignore` and will never be committed.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Demo login
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+Email:    admin@clinicdemo.com
+Password: clinic123
+```
+
+Create this user in Firebase Authentication → Users before running the app.
+
+---
+
+## Firestore collections
+
+The app uses two top-level collections:
+
+**`patients`**
+```
+id            (auto-generated)
+fullName      string
+phone         string
+age           number
+gender        "male" | "female" | "other"
+address       string
+createdAt     timestamp
+updatedAt     timestamp
+```
+
+**`appointments`**
+```
+id                 (auto-generated)
+patientId          string
+patientName        string  (stored here to avoid extra lookups)
+appointmentDate    string  (YYYY-MM-DD)
+appointmentTime    string  (HH:MM)
+reason             string
+status             "scheduled" | "completed" | "cancelled" | "no-show"
+notes              string
+createdAt          timestamp
+updatedAt          timestamp
+```
+
+---
+
+## How to run locally
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/patient-appointment-manager.git
+cd patient-appointment-manager
+
+# 2. Install dependencies
+npm install
+
+# 3. Add your Firebase config
+cp .env.example .env.local
+# then edit .env.local with your values
+
+# 4. Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## Notes
+
+- The app is designed as a desktop admin panel. It works on tablets as well, but smaller screens have limited navigation.
+- All patient names, phone numbers, and appointment details used during development are completely made up. No real personal or medical data was used at any point.
+- This project is for educational and portfolio purposes only.

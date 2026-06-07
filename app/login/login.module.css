@@ -110,3 +110,9 @@
   font-size: 0.8rem;
   color: #4f46e5;
 }
+
+@media (max-width: 460px) {
+  .card {
+    padding: 1.75rem 1.25rem;
+  }
+}

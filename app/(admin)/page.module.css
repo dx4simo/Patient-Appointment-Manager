@@ -31,6 +31,18 @@
   margin-bottom: 2.5rem;
 }
 
+@media (max-width: 900px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .statCard {
   background: #ffffff;
   border-radius: 8px;
@@ -114,7 +126,7 @@
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .table {

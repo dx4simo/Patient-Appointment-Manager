@@ -2,6 +2,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
 
@@ -78,7 +80,7 @@
   background: #ffffff;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .table {

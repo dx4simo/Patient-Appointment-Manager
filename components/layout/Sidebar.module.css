@@ -46,3 +46,37 @@
   background-color: rgba(99, 102, 241, 0.2);
   border-right: 3px solid #6366f1;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .brand {
+    padding: 0.85rem 1rem;
+    border-bottom: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .nav {
+    flex-direction: row;
+    padding: 0;
+    overflow-x: auto;
+    flex: 1;
+  }
+
+  .link {
+    padding: 0.85rem 1rem;
+    white-space: nowrap;
+  }
+
+  .link.active {
+    border-right: none;
+    border-bottom: 3px solid #6366f1;
+  }
+}
