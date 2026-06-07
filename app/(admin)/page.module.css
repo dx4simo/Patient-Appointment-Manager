@@ -1,3 +1,4 @@
+/* Page header */
 .title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -11,12 +12,185 @@
   margin-bottom: 2rem;
 }
 
-.placeholder {
+/* State messages */
+.stateMsg {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.errorMsg {
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+/* Stat cards */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.1rem 0.55rem;
+  min-width: 1.5rem;
+}
+
+.sectionLink {
+  font-size: 0.875rem;
+  color: #6366f1;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+}
+
+.emptyMsg {
   background: #ffffff;
   border: 1px dashed #d1d5db;
   border-radius: 8px;
-  padding: 3rem;
+  padding: 1.5rem;
   text-align: center;
   color: #9ca3af;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+}
+
+/* Table */
+.tableWrap {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead {
+  background-color: #f9fafb;
+}
+
+.table th {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table td {
+  padding: 0.8rem 1rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.timeCell {
+  font-weight: 500;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.reasonCell {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status badge */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badgeScheduled {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.badgeCompleted {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.badgeCancelled {
+  background-color: #f9fafb;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.badgeNoShow {
+  background-color: #fff7ed;
+  color: #c2410c;
 }
