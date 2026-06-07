@@ -27,3 +27,5 @@ export interface Appointment {
   createdAt: Date;
   updatedAt: Date;
 }
+
+export type AppointmentInput = Omit<Appointment, "id" | "createdAt" | "updatedAt">;
