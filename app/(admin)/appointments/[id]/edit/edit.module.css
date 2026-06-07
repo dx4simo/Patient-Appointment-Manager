@@ -1,0 +1,30 @@
+.stateMsg {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.errorMsg {
+  color: #dc2626;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  max-width: 600px;
+}
