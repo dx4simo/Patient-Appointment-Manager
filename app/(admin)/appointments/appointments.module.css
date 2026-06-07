@@ -1,0 +1,168 @@
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.addBtn {
+  padding: 0.6rem 1.1rem;
+  background-color: #4f46e5;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.15s;
+}
+
+.addBtn:hover {
+  background-color: #4338ca;
+}
+
+.stateMsg {
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+.errorMsg {
+  color: #dc2626;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+.empty {
+  background: #ffffff;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.tableWrap {
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead {
+  background-color: #f9fafb;
+}
+
+.table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table td {
+  padding: 0.9rem 1rem;
+  color: #374151;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.reasonCell {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status badge */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badgeScheduled {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.badgeCompleted {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.badgeCancelled {
+  background-color: #f9fafb;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+}
+
+.badgeNoShow {
+  background-color: #fff7ed;
+  color: #c2410c;
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btnEdit,
+.btnDelete {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  border: none;
+  font-family: inherit;
+}
+
+.btnEdit {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.btnEdit:hover {
+  background-color: #dcfce7;
+}
+
+.btnDelete {
+  background-color: #fef2f2;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.btnDelete:hover {
+  background-color: #fee2e2;
+}
