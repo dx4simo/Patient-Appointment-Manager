@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .title {
@@ -32,6 +32,74 @@
   background-color: #4338ca;
 }
 
+/* Filter bar */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 180px;
+  max-width: 280px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #111827;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.searchInput:focus {
+  border-color: #6366f1;
+}
+
+.filterSelect {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.filterSelect:focus {
+  border-color: #6366f1;
+}
+
+.clearBtn {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+  background-color: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-family: inherit;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.clearBtn:hover {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+.resultCount {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 0.85rem;
+}
+
+/* State messages */
 .stateMsg {
   color: #6b7280;
   font-size: 0.9rem;
@@ -44,6 +112,7 @@
   padding: 1rem 0;
 }
 
+/* Empty states */
 .empty {
   background: #ffffff;
   border: 1px dashed #d1d5db;
@@ -54,6 +123,23 @@
   font-size: 0.9rem;
 }
 
+.clearFiltersLink {
+  margin-top: 0.75rem;
+  display: inline-block;
+  font-size: 0.875rem;
+  color: #6366f1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: underline;
+}
+
+.clearFiltersLink:hover {
+  color: #4f46e5;
+}
+
+/* Table */
 .tableWrap {
   background: #ffffff;
   border-radius: 8px;
